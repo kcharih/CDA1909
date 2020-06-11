@@ -82,18 +82,23 @@ public class BibliothequeTest {
 		ex3.setRessource(journalLequipe);
 
 		// Ressource -> Exemplaire
-		List<Exemplaire> listExPetitPrince = petitPrince.getListExemplaires();
-		if (listExPetitPrince == null) {
-			listExPetitPrince = new ArrayList<Exemplaire>();
-		}
-		listExPetitPrince.add(ex1);
-		listExPetitPrince.add(ex2);
+//		List<Exemplaire> listExPetitPrince = petitPrince.getListExemplaires();
+//		if (listExPetitPrince == null) {
+//			listExPetitPrince = new ArrayList<Exemplaire>();
+//		}
+//		listExPetitPrince.add(ex1);
+//		listExPetitPrince.add(ex2);
+//
+//		List<Exemplaire> listExLequipe = journalLequipe.getListExemplaires();
+//		if (listExLequipe == null) {
+//			listExLequipe = new ArrayList<Exemplaire>();
+//		}
+//		listExLequipe.add(ex3);
 
-		List<Exemplaire> listExLequipe = journalLequipe.getListExemplaires();
-		if (listExLequipe == null) {
-			listExLequipe = new ArrayList<Exemplaire>();
-		}
-		listExLequipe.add(ex3);
+		// Ressource -> Exemplaire
+		petitPrince.addExemplaire(ex1);
+		petitPrince.addExemplaire(ex2);
+		journalLequipe.addExemplaire(ex3);
 
 		// Exemplaire -> Utilisateur(emprunter)
 		ex1.setUtilisateur(pierre);

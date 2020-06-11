@@ -33,6 +33,20 @@ public class Exemplaire {
 	}
 
 	/**
+	 * @param code_barre
+	 * @param date_retour
+	 * @param ressource
+	 * @param utilisateur
+	 */
+	public Exemplaire(String code_barre, Date date_retour, Ressource ressource, Utilisateur utilisateur) {
+		super();
+		this.code_barre = code_barre;
+		this.date_retour = date_retour;
+		this.ressource = ressource;
+		this.utilisateur = utilisateur;
+	}
+
+	/**
 	 * @return the code_barre
 	 */
 	public String getCode_barre() {

@@ -14,20 +14,13 @@ public class Revue extends Ressource {
 	private Date date_parution;
 
 	/**
-	 * 
-	 */
-	public Revue() {
-		super();
-	}
-
-	/**
+	 * @param titre
+	 * @param caution
 	 * @param numero_volume
 	 * @param date_parution
 	 */
 	public Revue(String titre, int caution, int numero_volume, Date date_parution) {
-		super();
-		this.setTitre(titre);
-		this.setCaution(caution);
+		super(titre, caution);
 		this.numero_volume = numero_volume;
 		this.date_parution = date_parution;
 	}

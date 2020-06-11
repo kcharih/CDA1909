@@ -13,20 +13,13 @@ public class Livre extends Ressource {
 	private int isbn;
 
 	/**
-	 * 
-	 */
-	public Livre() {
-		super();
-	}
-
-	/**
+	 * @param titre
+	 * @param caution
 	 * @param auteur
 	 * @param isbn
 	 */
 	public Livre(String titre, int caution, String auteur, int isbn) {
-		super();
-		this.setTitre(titre);
-		this.setCaution(caution);
+		super(titre, caution);
 		this.auteur = auteur;
 		this.isbn = isbn;
 	}

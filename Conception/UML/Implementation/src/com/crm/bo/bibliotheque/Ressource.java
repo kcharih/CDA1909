@@ -3,6 +3,7 @@
  */
 package com.crm.bo.bibliotheque;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,10 +13,21 @@ import java.util.List;
  *
  */
 public abstract class Ressource {
-	private String titre;
-	private int caution;
+	protected String titre;
+	protected int caution;
 	private Emplacement emplacement;
 	private List<Exemplaire> listExemplaires;
+
+	/**
+	 * @param titre
+	 * @param caution
+	 */
+	public Ressource(String titre, int caution) {
+		super();
+		this.titre = titre;
+		this.caution = caution;
+		this.listExemplaires = new ArrayList<Exemplaire>();
+	}
 
 	/**
 	 * @return the titre
@@ -59,18 +71,8 @@ public abstract class Ressource {
 		this.emplacement = emplacement;
 	}
 
-	/**
-	 * @return the listExemplaires
-	 */
-	public List<Exemplaire> getListExemplaires() {
-		return listExemplaires;
-	}
-
-	/**
-	 * @param listExemplaires the listExemplaires to set
-	 */
-	public void setListExemplaires(List<Exemplaire> listExemplaires) {
-		this.listExemplaires = listExemplaires;
+	public void addExemplaire(Exemplaire exemplaire) {
+		this.listExemplaires.add(exemplaire);
 	}
 
 }
