@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions name="HelloWorld"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  targetNamespace="HelloWorld"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="HelloWorld"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+    <xsd:documentation></xsd:documentation>
+
+    <wsdl:message name="helloRequest">
+        <wsdl:part name="who" type="xsd:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="helloResponse">
+        <wsdl:part name="welcome" type="xsd:string"></wsdl:part>
+    </wsdl:message>
+
+    <wsdl:portType name="HelloWorld">
+        <wsdl:operation name="hello">
+            <wsdl:input message="tns:helloRequest"/>
+            <wsdl:output message="tns:helloResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="HelloWorld" type="tns:HelloWorld">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="hello">
+            <soap:operation soapAction="http://localhost/soap-hello/server.php"/>
+            <wsdl:input>
+                <soap:body use="literal" namespace="HelloWorld"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" namespace="HelloWorld"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="HelloWorld">
+        <wsdl:port binding="tns:HelloWorld" name="SoapHelloWorld">
+            <soap:address location="http://localhost/soap-hello/server.php"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
